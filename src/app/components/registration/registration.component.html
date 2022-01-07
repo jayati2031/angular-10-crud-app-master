@@ -1,0 +1,48 @@
+<div style="background-color: black; margin-top: 200px; color: white;">
+  <h1 style="margin-left: 370px;">Employee Management System</h1>
+
+  <div style="width: 400px; margin: auto;">
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+        
+          <h2 style="margin-left: 150px; margin-top: 30px; margin-bottom: 30px;">Login</h2>
+
+          <div class="form-group">
+            <label for="emailid">Enter Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emailid"
+              required
+              [(ngModel)]="admin.emailid"
+              name="emailid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Enter Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              required
+              [(ngModel)]="admin.password"
+              name="password"
+            />
+          </div>
+          
+          <button (click)="saveAdmin()" class="btn btn-success" style="margin-top: 10px; margin-bottom: 20px;">Login →</button>
+            
+        </div>
+    
+        <div *ngIf="submitted">
+          <h4>You have logged in successfully!</h4>
+          <div style="margin-left: 80px;">
+            <button routerLink="admindetails" class="btn btn-success" >Admin Profile</button>
+            <br>
+            <button routerLink="employeedetails" class="btn btn-success my-3" style="margin-bottom: 10px;">Employee List</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+</div>
+  
